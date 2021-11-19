@@ -1,10 +1,20 @@
+import {Route, Routes} from "react-router-dom";
+
 import './App.css';
+import Home from "./atomic/pages/Home";
+import MyBlog from "./atomic/pages/MyBlog";
+import MenuBar from "./atomic/organisms/MenuBar";
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+      <div>
+        <MenuBar/>
+        <Routes>
+            <Route path="/" index element={<Home/>}/>
+            <Route path="/blog" element={<MyBlog/>}/>
+        </Routes>
+      </div>
   );
 }
 
