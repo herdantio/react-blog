@@ -1,4 +1,4 @@
-export default function MyBlog() {
+const MyBlog = () => {
     return (
         <div>
             <h1>
@@ -6,4 +6,6 @@ export default function MyBlog() {
             </h1>
         </div>
     )
-}
+};
+
+export default MyBlog;
