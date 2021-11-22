@@ -5,11 +5,13 @@ import FirebaseReactBlog from "../../utils/FirebaseReactBlog";
 
 const MenuBar = () => {
     
-    const app = new FirebaseReactBlog();
-    const [isUserSignedIn, setIsUserSignedIn] = useState(app.isUserSignedIn());
+    const firebaseReactBlog = new FirebaseReactBlog();
+
+    const [isUserSignedIn, setIsUserSignedIn] = useState(firebaseReactBlog.isUserSignedIn());
+    
     useEffect(() => {
-        app.auth.onAuthStateChanged(user => {
-            setIsUserSignedIn(user != null);
+        firebaseReactBlog.auth.onAuthStateChanged(user => {
+            (user != null) ? setIsUserSignedIn(true) : setIsUserSignedIn(false);
         });
     })
     
@@ -34,7 +36,7 @@ const MenuBar = () => {
                         <Link 
                             to="/" 
                             className="text-white text-3xl"
-                            onClick={()=>{app.googleSignOut()}}
+                            onClick={()=>{firebaseReactBlog.googleSignOut()}}
                         >
                             Logout
                         </Link>

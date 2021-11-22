@@ -2,7 +2,7 @@ import FirebaseReactBlog from "../../utils/FirebaseReactBlog";
 
 const Login = () => {
     
-    const app = new FirebaseReactBlog()
+    const firebaseReactBlog = new FirebaseReactBlog()
 
     return (
         <div className="flex justify-center">
@@ -11,7 +11,7 @@ const Login = () => {
                     <h1 className="text-white text-5xl">Login</h1>
                 </div>
                 <div>
-                    <button className="bg-blue-500 p-3 rounded-lg" onClick={()=>{app.googleAuth()}}>
+                    <button className="bg-blue-500 p-3 rounded-lg" onClick={()=>{firebaseReactBlog.googleAuth()}}>
                         Sign In / Sign Up with Google
                     </button>
                 </div>
